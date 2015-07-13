@@ -15,6 +15,9 @@
     "tests"
   ],
   "dependencies": {
-    "lumx": "~0.3.64"
+    "lumx": "~0.3.64",
+    "angular-devise": "~1.1.0",
+    "angular-route": "~1.4.2",
+    "angular-ui-router": "~0.2.15"
   }
 }

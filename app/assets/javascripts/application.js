@@ -15,5 +15,8 @@
 //= require velocity/velocity
 //= require moment/min/moment-with-locales
 //= require angular/angular
+//= require angular-route/angular-route
+//= require angular-ui-router/release/angular-ui-router
 //= require lumx/dist/lumx
+//= require diligence
 //= require_tree .

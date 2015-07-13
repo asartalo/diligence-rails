@@ -37,6 +37,7 @@ module Diligence
     config.active_record.raise_in_transactional_callbacks = true
     config.assets.paths.tap do |paths|
       [
+        'app/assets/components',
         'vendor/assets/components/bourbon/app/assets/stylesheets',
         'vendor/assets/components/mdi/scss',
         'vendor/assets/components'
