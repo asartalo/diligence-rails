@@ -1,0 +1,20 @@
+{
+  "name": "Diligence",
+  "version": "0.0.0",
+  "homepage": "https://github.com/asartalo/diligence",
+  "authors": [
+    "Wayne Duran <asartalo@gmail.com>"
+  ],
+  "description": "Personal productivity app",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "lumx": "~0.3.64"
+  }
+}

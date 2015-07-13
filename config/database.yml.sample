@@ -1,0 +1,12 @@
+common: &common
+  adapter: postgresql
+  host: localhost
+  username: diligence
+  password: diligence
+development:
+  <<: *common
+  database: diligence_development
+test:
+  <<: *common
+  database: diligence_test
+

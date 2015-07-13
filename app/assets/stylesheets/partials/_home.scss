@@ -1,0 +1,17 @@
+.page-home {
+  text-align: center;
+  padding: 200px 80px 80px;
+  max-width: 800px;
+  margin: 0 auto;
+
+  h1 {
+    @extend %fs-display-3;
+    font-weight: 300;
+  }
+
+  .subhead {
+    @extend %fs-headline;
+    margin-top: 24px;;
+    font-weight: 300;
+  }
+}
