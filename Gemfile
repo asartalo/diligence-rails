@@ -12,7 +12,6 @@ gem 'slim-rails'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-gem 'listen', '~> 2.7'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'devise'
@@ -28,6 +27,10 @@ gem 'unicorn'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+group :development do
+  gem 'listen', '~> 2.7'
+end
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
@@ -37,5 +40,6 @@ group :development, :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'selenium-webdriver'
+  gem 'jasmine'
 end
 
