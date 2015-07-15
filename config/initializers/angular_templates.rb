@@ -1,6 +1,6 @@
 require 'fileutils'
 
-if Rails.env.development?
+if Rails.env.development? and ENV['server_mode']
   cache_path = Rails.root.join('tmp/cache/assets/development')
   FileUtils.rm_rf(cache_path)
 
