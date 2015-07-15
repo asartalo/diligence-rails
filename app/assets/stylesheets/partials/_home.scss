@@ -1,8 +1,18 @@
 .page-home {
+  @include outer-container;
   text-align: center;
-  padding: 200px 80px 80px;
-  max-width: 800px;
   margin: 0 auto;
+
+  .page-home-branding {
+    @include span-columns(6);
+    @include shift(3);
+    margin-top: rem(128);
+  }
+
+  .login-form {
+    @include span-columns(4);
+    @include shift(4);
+  }
 
   h1 {
     @extend %fs-display-3;
@@ -11,7 +21,11 @@
 
   .subhead {
     @extend %fs-headline;
-    margin-top: 24px;;
+    margin-top: rem(24);
     font-weight: 300;
   }
+}
+
+.form-actions {
+  padding: rem(16);
 }

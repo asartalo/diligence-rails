@@ -2,6 +2,7 @@ diligence = angular.module 'diligence', [
   'ui.router'
   'templates'
   'lumx'
+  'Devise'
 ]
 
 diligence.config ($stateProvider, $urlRouterProvider) ->
@@ -11,5 +12,9 @@ diligence.config ($stateProvider, $urlRouterProvider) ->
     .state "home",
       url: "/"
       controller: ($scope, $templateCache) ->
-        window.t = $templateCache
+        $scope.login = {
+          email: ""
+          password: ""
+        }
+
       templateUrl: "home/index.html"
