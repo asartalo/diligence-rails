@@ -32,6 +32,10 @@ group :development do
   gem 'annotate', '~> 2.6.6'
 end
 
+group :test do
+  gem 'shoulda', require: false
+end
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
