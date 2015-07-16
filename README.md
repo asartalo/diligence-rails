@@ -15,4 +15,7 @@ Configuration
 Running the Specs
 -----------------
 
+Annotations
+-----------
+`annotate --exclude tests,fixtures,factories,serializers`
 

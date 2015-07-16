@@ -29,6 +29,7 @@ gem 'unicorn'
 
 group :development do
   gem 'listen', '~> 2.7'
+  gem 'annotate', '~> 2.6.6'
 end
 
 group :development, :test do
