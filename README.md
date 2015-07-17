@@ -8,6 +8,8 @@ Dependencies
 * Rails 4.2.3
 * Ruby 2.2.2
 * Uses bower http://dotwell.io/taking-advantage-of-bower-in-your-rails-4-app/
+* Lumx http://ui.lumapps.com/
+* Neat http://thoughtbot.github.io/neat-docs/latest/
 
 Configuration
 -------------
