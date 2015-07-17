@@ -9,7 +9,12 @@
 
       Dir.glob(templates).each do |f|
         key  = f.gsub(%r(^#{app_root}/components/), '').gsub(%r(slim$), 'html')
-        html = Slim::Template.new(pretty: false) { File.read(f) }.render
+        scope = Object.new
+        scope.class_eval do
+          include Standalone::DiligenceTextHelper
+        end
+        template = Slim::Template.new(pretty: false) { File.read(f) }
+        html = template.render(scope)
     %>
       $templateCache.put("<%= key %>", "<%= escape_javascript(html) %>");
   <% end %>

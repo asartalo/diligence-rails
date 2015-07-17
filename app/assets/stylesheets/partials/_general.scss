@@ -9,3 +9,21 @@ body {
 // TODO: fix this
 .main {
 }
+
+a {
+  color: $link-color;
+
+  &:visited {
+    color: $link-color-visited;
+  }
+}
+
+.page-title {
+  @extend %fs-display-2;
+  font-weight: 300;
+}
+
+.padded {
+  @include padded;
+}
+

@@ -1,4 +1,4 @@
-angular.module('diligence').controller "HomePageController",
+angular.module('diligence').controller "HomePageCtrl",
   ($scope, $templateCache) ->
     $scope.credentials = {
       email: ""

@@ -1,0 +1,16 @@
+@mixin responsive {
+  @include media-query(palm) {
+    @include span-columns(12);
+    @include shift(0);
+  }
+}
+
+@mixin padded {
+  @include pad(default);
+}
+
+@mixin centered-column ($width) {
+  @include span-columns($width);
+  @include shift((12 - $width) / 2);
+}
+

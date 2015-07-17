@@ -4,17 +4,7 @@ diligence = angular.module 'diligence', [
   'lumx'
   'Devise'
 ]
+  .config (AuthInterceptProvider) ->
+    # Intercept 401 Unauthorized everywhere
+    AuthInterceptProvider.interceptAuth(true)
 
-diligence.config ($stateProvider, $urlRouterProvider) ->
-  $urlRouterProvider.otherwise "/"
-
-  $stateProvider
-    .state "home",
-      url: "/"
-      controller: ($scope, $templateCache) ->
-        $scope.login = {
-          email: ""
-          password: ""
-        }
-
-      templateUrl: "home/index.html"

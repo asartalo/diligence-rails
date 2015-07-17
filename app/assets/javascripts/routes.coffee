@@ -5,6 +5,13 @@ angular.module 'diligence'
     $stateProvider
       .state "home",
         url: "/"
-        controller: "HomePageController"
+        controller: "HomePageCtrl"
         templateUrl: "home/index.html"
+        interceptAuth: false
+
+      .state "signup",
+        url: "/signup"
+        controller: "SignUpPageCtrl"
+        templateUrl: "signup/signup.html"
+        interceptAuth: false
 

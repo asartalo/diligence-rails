@@ -17,7 +17,9 @@
 //= require angular/angular
 //= require angular-route/angular-route
 //= require angular-ui-router/release/angular-ui-router
-//= require angular-devise/src/build/devise
+//= require angular-devise/lib/devise
 //= require lumx/dist/lumx
 //= require diligence
+//= require_tree ../components
 //= require_tree .
+

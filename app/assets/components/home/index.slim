@@ -3,20 +3,22 @@
     h1
       | Diligence
     p.subhead
-      | Personal productivity for the lazy
+      = "Personal productivity "
+      = nbsp_fill('for the lazy')
 
   .login-form(flex-item="4")
     form
       .field-row flex-container="row"
         .field(flex-item)
           lx-text-field label="Email"
-            input type="text" ng-model="login.email"
+            input type="text" ng-model="credentials.email"
       .field-row(flex-container="row")
         .field(flex-item)
           lx-text-field label="Password"
-            input type="password" ng-model="login.password"
+            input type="password" ng-model="credentials.password"
       .form-actions.field-row flex-container="row"
         .field(flex-item)
-          button class="btn btn--xl btn--blue btn--raised"
-            | Login
+          button>(class="btn btn--xl btn--blue btn--raised") Login
+          | or
+          a<(ui-sref="signup") Sign Up
 
