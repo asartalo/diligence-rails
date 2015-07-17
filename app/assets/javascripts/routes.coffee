@@ -15,3 +15,9 @@ angular.module 'diligence'
         templateUrl: "signup/signup.html"
         interceptAuth: false
 
+      .state "temp",
+        url: "/temporary"
+        controller: ->
+          alert "This is temporary! Please change it."
+        template: "<h1>This is temporary! Please change it.</h1>"
+

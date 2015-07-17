@@ -7,7 +7,7 @@
       = nbsp_fill('for the lazy')
 
   .login-form(flex-item="4")
-    form
+    form(name="loginForm" ng-submit="login(loginForm, credentials)")
       .field-row flex-container="row"
         .field(flex-item)
           lx-text-field label="Email"
