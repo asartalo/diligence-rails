@@ -1,7 +1,12 @@
 @mixin responsive {
   @include media-query(palm) {
-    @include span-columns(12);
-    @include shift(0);
+    @include centered-column(12);
+  }
+}
+
+@mixin responsive-centered-adjust($bpoint, $width) {
+  @include media-query($bpoint) {
+    @include centered-column($width);
   }
 }
 

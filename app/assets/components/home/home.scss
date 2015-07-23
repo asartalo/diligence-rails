@@ -12,9 +12,9 @@
   }
 
   .login-form {
-    @include span-columns(4);
-    @include shift(4);
+    @include centered-column(4);
     @include responsive;
+    @include responsive-centered-adjust(palmlap, 6);
     @include padded;
   }
 

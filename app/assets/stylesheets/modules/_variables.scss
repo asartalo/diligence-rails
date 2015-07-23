@@ -63,3 +63,15 @@ $base-spacing-unit:     8px;
 $colors:                ('red': $red, 'pink': $pink, 'purple': $purple, 'deep-purple': $deep-purple, 'indigo': $indigo, 'blue': $blue, 'light-blue': $light-blue, 'cyan' : $cyan ,'teal': $teal, 'green': $green, 'light-green': $light-green, 'lime': $lime, 'yellow': $yellow, 'amber': $amber, 'orange': $orange, 'deep-orange': $deep-orange, 'brown': $brown, 'grey': $grey, 'blue-grey': $blue-grey, 'black': $black, 'white': $white);
 $sizes:                 ('xs': $size-xs, 's': $size-s, 'm': $size-m, 'l': $size-l, 'xl': $size-xl);
 
+
+$breakpoints: (
+    "palm"          "screen and (max-width: 480px)",
+    "palmlap"       "screen and (min-width: 481px) and (max-width: 800px)",
+    "lap"           "screen and (min-width: 481px) and (max-width: 1023px)",
+    "lap-and-up"    "screen and (min-width: 481px)",
+    "portable"      "screen and (max-width: 1023px)",
+    "desk"          "screen and (min-width: 1024px)",
+    "desk-wide"     "screen and (min-width: 1280px)",
+    "full-hd"       "screen and (min-width: 1920px)",
+    "retina"        "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)"
+);
