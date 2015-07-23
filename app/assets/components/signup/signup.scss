@@ -1,0 +1,11 @@
+.page-signup {
+  @include outer-container;
+
+  .signup-form {
+    @include span-columns(4);
+    @include shift(4);
+    @include responsive;
+    @include padded;
+    margin-top: rem(128);
+  }
+}
