@@ -22,4 +22,16 @@ class ApplicationController < ActionController::Base
       }
     end
   end
+
+  def user
+    current_user
+  end
+
+  def not_found
+    head 404, content_type: 'text/plain'
+  end
+
+  def bad_request
+    head 400, content_type: 'text/plain'
+  end
 end

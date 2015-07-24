@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Task, type: :model do
-  subject(:task) { create :task }
+  subject(:task) { build_stubbed :task }
   it { should validate_presence_of(:name) }
   it { should belong_to(:user) }
 

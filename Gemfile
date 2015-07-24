@@ -23,6 +23,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Unicorn as the app server
 gem 'unicorn'
+gem 'active_model_serializers', '>= 0.10.0.rc2'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -50,5 +51,6 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'selenium-webdriver'
   gem 'jasmine'
+  gem 'pry'
 end
 
