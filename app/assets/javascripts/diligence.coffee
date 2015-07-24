@@ -25,10 +25,13 @@ diligence = angular.module 'diligence', [
     AuthInterceptProvider.interceptAuth(true)
 
     $locationProvider.html5Mode(true)
-
     $httpProvider.defaults.withCredentials = true
 
   .run ($rootScope, $state, $stateParams, Auth) ->
     $rootScope.$on 'devise:unauthorized', (event, xhr, deferred) ->
-      $state.go("home")
+      console.dir $state.current
+      if $state.current.interceptAuth
+        $state.go("home")
+      else
+        console.log "YOYOYO"
 

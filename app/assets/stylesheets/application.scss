@@ -6,5 +6,5 @@
 @import "modules/mixins";
 @import "lumx/dist/scss/lumx";
 @import "neat/app/assets/stylesheets/neat";
-@import "partials/general";
+@import "partials/**/*";
 @import "../components/**/*";

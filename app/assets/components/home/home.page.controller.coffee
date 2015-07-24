@@ -5,13 +5,15 @@ angular.module('diligence').controller "HomePageCtrl",
       password: ""
     }
 
+    $scope.authError = false
+
     $scope.login = (form, creds) ->
       if form.$valid
-        Auth.login(creds).then(
+        Auth.login(creds, interceptAuth: false).then(
           (user) ->
-            # TODO: Change this
+            $scope.authError = false
             $state.transitionTo("temp")
           (error) ->
-            alert JSON.stringify(error)
+            $scope.authError = true
         )
 

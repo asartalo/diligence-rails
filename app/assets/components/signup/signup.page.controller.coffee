@@ -1,5 +1,5 @@
 angular.module('diligence').controller "SignUpPageCtrl",
-  ($scope, Auth) ->
+  ($scope, Auth, $state) ->
     $scope.credentials = {
       name: ""
       email: ""
@@ -12,7 +12,7 @@ angular.module('diligence').controller "SignUpPageCtrl",
         creds.password_confirmation = creds.password
         Auth.register(creds).then(
           (user) ->
-            console.log "USER REGISTERED!", user
+            $state.transitionTo("tasks")
           (error) ->
             console.log error
         )

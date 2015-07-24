@@ -1,0 +1,9 @@
+.text-field-error {
+  text-align: left;
+}
+
+.form-error {
+  @extend .text-field-error;
+  @include font-size(16px);
+  text-align: center;
+}

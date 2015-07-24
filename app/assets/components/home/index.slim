@@ -7,15 +7,21 @@
       = nbsp_fill('for the lazy')
 
   .login-form(flex-item="4")
-    form(name="loginForm" ng-submit="login(loginForm, credentials)")
+    form(name="form" ng-submit="login(form, credentials)")
+      .field-row(flex-container="row" ng-show="authError")
+        .field(flex-item)
+          p.form-error
+            | Oops, we couldn't log you in. Check your credentials.
       .field-row flex-container="row"
         .field(flex-item)
-          lx-text-field label="Email"
-            input type="text" ng-model="credentials.email"
+          lx-text-field(label="Email" error="!form.email.$valid && form.email.$touched")
+            input(type="text" name="email" required ng-model="credentials.email")
+          span.text-field-error(ng-show="!form.email.$valid && form.email.$touched") You need a valid email to login
       .field-row(flex-container="row")
         .field(flex-item)
-          lx-text-field label="Password"
-            input type="password" ng-model="credentials.password"
+          lx-text-field(label="Password" error="!form.password.$valid && form.password.$touched")
+            input(type="password" name="password" required ng-model="credentials.password")
+          span.text-field-error(ng-show="!form.password.$valid && form.password.$touched") Keep calm and remember your password
       .form-actions.field-row flex-container="row"
         .field(flex-item)
           button>(class="btn btn--xl btn--blue btn--raised") Login

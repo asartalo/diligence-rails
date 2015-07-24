@@ -5,4 +5,3 @@ angular.module 'diligence'
         url: "/"
         controller: "HomePageCtrl"
         templateUrl: "home/index.html"
-        interceptAuth: false

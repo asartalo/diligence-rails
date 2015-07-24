@@ -1,20 +1,38 @@
 .page-signup
   .signup-form.padded
-    form(name="signupForm" ng-submit="signup(signupForm, credentials)")
+    form(name="form" ng-submit="signup(form, credentials)")
       div(flex-item="4")
         h1.page-title Sign Up
         .field-row flex-container="row"
           .field(flex-item)
-            lx-text-field label="Name"
-              input type="text" ng-model="credentials.name"
+            lx-text-field(
+              label="Name"
+              error="!form.name.$valid && form.name.$touched"
+              valid="form.name.$valid"
+            )
+              input(type="text" name="name" required  ng-model="credentials.name")
+            span.text-field-error(ng-show="!form.name.$valid && form.name.$touched")
+              | I need your name, dear friend
         .field-row flex-container="row"
           .field(flex-item)
-            lx-text-field label="Email"
-              input type="text" ng-model="credentials.email"
+            lx-text-field(
+              label="Email"
+              error="!form.email.$valid && form.email.$touched"
+              valid="form.email.$valid"
+            )
+              input(type="email" name="email" required ng-model="credentials.email")
+            span.text-field-error(ng-show="!form.email.$valid && form.email.$touched")
+              | Please provide a valid email address
         .field-row(flex-container="row")
           .field(flex-item)
-            lx-text-field label="Password"
-              input type="password" ng-model="credentials.password"
+            lx-text-field(
+              label="Password"
+              error="!form.password.$valid && form.password.$touched"
+              valid="form.password.$valid"
+            )
+              input(type="password" name="password" required ng-model="credentials.password")
+            span.text-field-error(ng-show="!form.password.$valid && form.password.$touched")
+              | Oh, you need to provide a password
       .form-actions
         button>(class="btn btn--m btn--blue btn--raised")
           | Sign Up
