@@ -1,3 +1,5 @@
+'use strict'
+
 angular.module('diligence').controller "HomePageCtrl",
   ($scope, Auth, $state) ->
     $scope.credentials = {
@@ -12,7 +14,7 @@ angular.module('diligence').controller "HomePageCtrl",
         Auth.login(creds, interceptAuth: false).then(
           (user) ->
             $scope.authError = false
-            $state.transitionTo("temp")
+            $state.transitionTo("next")
           (error) ->
             $scope.authError = true
         )
