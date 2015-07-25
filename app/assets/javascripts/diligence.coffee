@@ -27,6 +27,9 @@ diligence = angular.module 'diligence', [
     $locationProvider.html5Mode(true)
     $httpProvider.defaults.withCredentials = true
 
+  .config ($httpProvider) ->
+    $httpProvider.interceptors.push "tokenAuthenticityInterceptor"
+
   .run ($rootScope, $state, $stateParams, Auth) ->
     $rootScope.$on 'devise:unauthorized', (event, xhr, deferred) ->
       console.dir $state.current

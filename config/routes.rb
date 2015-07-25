@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   scope '/api' do
     scope '/v1' do
 
+      scope '/ping' do
+        get '/' => 'ping#ping'
+      end
+
       scope '/tasks' do
         get '/' => 'tasks#index'
         post '/' => 'tasks#create'
