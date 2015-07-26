@@ -1,8 +1,12 @@
 'use strict'
 
 angular.module('diligence').controller "NextPageCtrl",
-  ($scope, Auth, $state) ->
-    $scope.credentials = {
-      email: ""
-      password: ""
-    }
+  ($scope, Auth, Tasks) ->
+    $scope.tasks = []
+
+    $scope.tasks = Tasks.all().then(
+      (data) ->
+        $scope.tasks = data
+    )
+
+

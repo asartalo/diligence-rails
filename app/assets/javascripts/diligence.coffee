@@ -1,4 +1,4 @@
-diligence = angular.module 'diligence', [
+angular.module 'diligence', [
   'ui.router'
   'templates'
   'lumx'

@@ -1,2 +1,11 @@
 .page-next
   h1 Next
+
+  ul.tasks.next-tasks(ng-if="tasks.length")
+    li.task(ng-repeat="task in tasks track by task.id")
+      .task-done.checkbox
+        input.checkbox__input type="checkbox" ng-model="task['done?']" id="checkbox-{{task.id}}" /
+        label.task-name.checkbox__label for="checkbox-{{task.id}}"
+          | {{task.name}}
+
+

@@ -15,7 +15,7 @@
     "tests"
   ],
   "dependencies": {
-    "lumx": "~0.3.64",
+    "lumx": "~0.3.73",
     "angular-devise": "git@github.com:asartalo/angular_devise#75422fd090aba558f10e6714c1776c4e15ddcaa7",
     "angular-route": "~1.4.2",
     "angular-ui-router": "~0.2.15",

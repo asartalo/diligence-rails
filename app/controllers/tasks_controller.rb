@@ -53,9 +53,7 @@ class TasksController < BaseApiController
 
   def set_task_params
     handle_params do
-      @task_params = json_params.require(:data).permit(:type, attributes: [
-        :name, :done?
-      ]).require(:attributes)
+      @task_params = json_params.permit(:name, :done?)
       @done_param = @task_params.extract(:done?)
     end
   end
