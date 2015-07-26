@@ -6,11 +6,24 @@ diligence = angular.module 'diligence', [
 ]
   .provider 'mustLogin', ( mustLogin = ->
     # This here is what we really want
-    @mustLogin = (stateOpts) ->
-      stateOpts.intereceptAuth = true
+    @mustLogin = (stateOpts) =>
+      stateOpts.interceptAuth = true
       stateOpts.resolve ||= {}
       stateOpts.resolve.currentUser = (Auth) ->
         Auth.currentUser()
+      stateOpts
+
+    @hasUser = (stateOpts) ->
+      stateOpts.resolve ||= {}
+      stateOpts.resolve.currentUser = (Auth, $q) ->
+        deferred = $q.defer()
+        Auth.currentUser().then(
+          (user) ->
+            deferred.resolve(user)
+          (e) ->
+            deferred.resolve({})
+        )
+        deferred.promise
       stateOpts
 
     @$get = [ ->
@@ -32,9 +45,7 @@ diligence = angular.module 'diligence', [
 
   .run ($rootScope, $state, $stateParams, Auth) ->
     $rootScope.$on 'devise:unauthorized', (event, xhr, deferred) ->
-      console.dir $state.current
-      if $state.current.interceptAuth
-        $state.go("home")
-      else
-        console.log "YOYOYO"
+      currentState = $state.current
+      if currentState.interceptAuth || (currentState.abstract && currentState.name == "")
+        $state.transitionTo("home")
 

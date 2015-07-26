@@ -6,6 +6,9 @@ angular.module('diligence').controller "SignUpPageCtrl",
       password: ""
     }
 
+    if Auth.isAuthenticated()
+      $state.go "next"
+
     $scope.signup = (form, creds) ->
       if form.$valid
         # Because password confirmations are unnecessary

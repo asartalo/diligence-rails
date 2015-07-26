@@ -1,11 +1,14 @@
 'use strict'
 
 angular.module('diligence').controller "HomePageCtrl",
-  ($scope, Auth, $state) ->
+  ($scope, Auth, $state, currentUser) ->
     $scope.credentials = {
       email: ""
       password: ""
     }
+
+    if Auth.isAuthenticated()
+      $state.go "next"
 
     $scope.authError = false
 
@@ -14,7 +17,7 @@ angular.module('diligence').controller "HomePageCtrl",
         Auth.login(creds, interceptAuth: false).then(
           (user) ->
             $scope.authError = false
-            $state.transitionTo("next")
+            $state.go("next")
           (error) ->
             $scope.authError = true
         )

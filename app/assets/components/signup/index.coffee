@@ -1,11 +1,10 @@
 angular.module 'diligence'
-  .config ($stateProvider) ->
-
+  .config ($stateProvider, mustLoginProvider) ->
+    hasUser = mustLoginProvider.hasUser
     $stateProvider
-      .state "signup",
+      .state "signup", hasUser
         url: "/signup"
         controller: "SignUpPageCtrl"
         templateUrl: "signup/signup.html"
-        interceptAuth: false
 
 
