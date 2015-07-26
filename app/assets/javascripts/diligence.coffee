@@ -17,7 +17,7 @@ diligence = angular.module 'diligence', [
       stateOpts.resolve ||= {}
       stateOpts.resolve.currentUser = (Auth, $q) ->
         deferred = $q.defer()
-        Auth.currentUser().then(
+        Auth.currentUser(interceptAuth: false).then(
           (user) ->
             deferred.resolve(user)
           (e) ->
