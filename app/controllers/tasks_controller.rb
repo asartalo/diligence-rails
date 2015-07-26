@@ -13,7 +13,7 @@ class TasksController < BaseApiController
   end
 
   def create
-    task.assign_attributes(task_params)
+    task = task_update(task_params)
     if task.save
       render json: task
     else
@@ -22,12 +22,25 @@ class TasksController < BaseApiController
   end
 
   def update
+    create
   end
 
   def destroy
+    if task.destroy?
+      no_content
+    else
+      bad_request
+    end
   end
 
   private
+
+  def task_update
+    task.assign_attributes(task_params)
+    if done_param
+      task.done
+    end
+  end
 
   def find_task
     @task = user.tasks.find_by(id: params[:id])
@@ -43,11 +56,16 @@ class TasksController < BaseApiController
       @task_params = json_params.require(:data).permit(:type, attributes: [
         :name, :done?
       ]).require(:attributes)
+      @done_param = @task_params.extract(:done?)
     end
   end
 
   def task_params
     @task_params
+  end
+
+  def done_param
+    @done_param
   end
 
 end
