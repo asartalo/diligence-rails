@@ -25,5 +25,6 @@ Rails.application.routes.draw do
   end
 
 
+  get '/fonts/:name.:ext', to: redirect('/assets/%{name}.%{ext}')
   get '/*path' => "public#home"
 end

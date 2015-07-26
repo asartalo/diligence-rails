@@ -38,8 +38,10 @@ module Diligence
     config.assets.paths.tap do |paths|
       [
         'app/assets/components',
+        'app/assets/fonts',
         'vendor/assets/components/bourbon/app/assets/stylesheets',
         'vendor/assets/components/mdi/scss',
+        'vendor/assets/components/mdi/fonts',
         'vendor/assets/components'
       ].each { |p| paths << root_path(p) }
     end
