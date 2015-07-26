@@ -1,3 +1,9 @@
+class HtmlOnlyConstraint
+  def matches?(request)
+    request.format.symbol == :html
+  end
+end
+
 Rails.application.routes.draw do
   devise_for :users
   get 'public/home'
@@ -26,5 +32,5 @@ Rails.application.routes.draw do
 
 
   get '/fonts/:name.:ext', to: redirect('/assets/%{name}.%{ext}')
-  get '/*path' => "public#home"
+  get '/*path' => "public#home", constraints: HtmlOnlyConstraint.new
 end
