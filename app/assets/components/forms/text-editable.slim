@@ -1,0 +1,6 @@
+.text-editable(ng-class="{ 'edit-mode': editMode }")
+  span.text-editable-text(ng-click="startEdit()")
+    | {{text}}
+  lx-text-field
+    textarea(ng-model="text" on-enter="finished()" ng-blur="doneEditing()")
+

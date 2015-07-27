@@ -1,0 +1,24 @@
+.text-editable {
+  position: relative;
+
+  .text-editable-text {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    visibility: visible;
+  }
+  .text-field {
+    visibility: hidden;
+  }
+
+  &.edit-mode {
+    .text-editable-text {
+      visibility: hidden;
+      z-index: -1;
+    }
+    .text-field {
+      visibility: visible;
+    }
+  }
+}

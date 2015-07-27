@@ -10,10 +10,18 @@ RSpec.describe Task, type: :model do
   end
 
   context "when marked as done" do
-    before { task.done }
+    before { task.mark_as_done }
 
     it "is done" do
       expect(task.done?).to be(true)
+    end
+
+    context "when marked as not done" do
+      before { task.mark_as_not_done }
+
+      it "is not done" do
+        expect(task.done?).to be(false)
+      end
     end
   end
 

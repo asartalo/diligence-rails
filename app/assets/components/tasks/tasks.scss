@@ -1,0 +1,32 @@
+.page-tasks {
+  @include outer-container;
+}
+
+.page-content {
+  @include span-columns(12);
+  @include padded;
+  margin: 0 auto;
+}
+
+
+.tasks {
+  list-style-type: none;
+
+  .task-done {
+    display: inline-block;
+    float: left;
+    position: relative;
+  }
+
+  .task-name {
+    padding-left: 30px;
+
+    .text-field {
+      padding-top: 0;
+
+      textarea {
+        padding: 0;
+      }
+    }
+  }
+}

@@ -1,7 +1,8 @@
 angular.module 'diligence'
-  .config ($stateProvider) ->
+  .config ($stateProvider, mustLoginProvider) ->
+    hasUser = mustLoginProvider.hasUser
     $stateProvider
-      .state "tasks",
+      .state "tasks", hasUser
         url: "/tasks"
         controller: "TasksPageCtrl"
         templateUrl: "tasks/tasks.html"

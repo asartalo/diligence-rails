@@ -20,6 +20,7 @@
     "angular-route": "~1.4.2",
     "angular-ui-router": "~0.2.15",
     "neat": "~1.7.2",
-    "lodash": "~3.10.0"
+    "lodash": "~3.10.0",
+    "angular-resource": "~1.4.3"
   }
 }

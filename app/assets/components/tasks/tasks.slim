@@ -1,1 +1,19 @@
-h1 Hello {{ user.name }}
+.page-tasks
+  .page-content
+    h1 Tasks
+
+    ul.tasks.next-tasks(ng-if="tasks.length")
+      li.task
+        form(name="form" ng-submit="createTask(form, newTask)")
+          lx-text-field()
+            textarea(ng-model="newTask.name" required on-enter="createTask(form, newTask)")
+      li.task(ng-repeat="task in tasks track by task.id")
+        .task-done.checkbox--standalone
+          input.checkbox__input(
+            type="checkbox" ng-model="task.done" id="checkbox-{{task.id}}"
+            ng-change="toggleStatus(task)"
+          ) /
+          label.task-name.checkbox__label(for="checkbox-{{task.id}}")
+        .task-name
+          text-editable(ng-model="task.name" on-finish="updateTask(task)" ng-if="task.name")
+

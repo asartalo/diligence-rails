@@ -1,4 +1,5 @@
 angular.module 'diligence', [
+  'ngResource'
   'ui.router'
   'templates'
   'lumx'

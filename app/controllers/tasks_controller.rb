@@ -1,7 +1,7 @@
 class TasksController < BaseApiController
 
   before_filter :find_task, only: [:show, :update, :destroy]
-  before_filter :set_task_params, only: [:create]
+  before_filter :set_task_params, only: [:create, :update]
   # skip_before_action :verify_authenticity_token
 
   def index
@@ -35,11 +35,14 @@ class TasksController < BaseApiController
 
   private
 
-  def task_update
-    task.assign_attributes(task_params)
-    if done_param
-      task.done
+  def task_update(the_params)
+    task.assign_attributes(the_params)
+    if done_param.present? and done_param[:done] == true
+      task.mark_as_done
+    else
+      task.mark_as_not_done
     end
+    task
   end
 
   def find_task
@@ -53,8 +56,8 @@ class TasksController < BaseApiController
 
   def set_task_params
     handle_params do
-      @task_params = json_params.permit(:name, :done?)
-      @done_param = @task_params.extract(:done?)
+      @task_params = json_params.permit(:name, :done)
+      @done_param = @task_params.extract!(:done)
     end
   end
 

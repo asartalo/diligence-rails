@@ -1,15 +1,8 @@
 'use strict'
 
 angular.module('diligence').factory "Tasks",
-  ($http, $q) ->
+  ($http, $q, $resource) ->
+    defaults = id: '@id'
 
-    all: ->
-      deferred = $q.defer()
-      $http.get '/api/v1/tasks'
-        .success (data) ->
-          deferred.resolve(data)
-        .error (err) ->
-          deferred.reject(err)
-
-      deferred.promise
-
+    $resource '/api/v1/tasks/:id', defaults,
+      update: { method: 'put' }

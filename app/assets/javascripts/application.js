@@ -15,7 +15,7 @@
 //= require velocity/velocity
 //= require moment/min/moment-with-locales
 //= require angular/angular
-//= require angular-route/angular-route
+//= require angular-resource/angular-resource
 //= require angular-ui-router/release/angular-ui-router
 //= require angular-devise/lib/devise
 //= require lumx/dist/lumx
