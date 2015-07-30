@@ -1,7 +1,8 @@
 #= require application
 #= require auth_mock
 #= require angular-mocks/angular-mocks
-#= require sinon/lib/sinon
+#= require sinonjs/sinon
+#= require sinon-stub-promise
 #= require jasmine-sinon/lib/jasmine-sinon
 
 'use strict'
@@ -22,8 +23,10 @@ beforeEach inject (_$httpBackend_, _$compile_, $rootScope, $controller, $locatio
   @eventLoop =
     flush: =>
       @scope.$digest()
-  # @sandbox = sinon.sandbox.create()
+  @sandbox = sinon.sandbox.create()
 
 afterEach ->
   @http.resetExpectations()
   @http.verifyNoOutstandingExpectation()
+  @sandbox.restore()
+

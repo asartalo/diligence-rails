@@ -14,7 +14,8 @@ angular.module('diligence').controller "HomePageCtrl",
 
     $scope.login = (form, creds) ->
       if form.$valid
-        Auth.login(creds, interceptAuth: false).then(
+        promise = Auth.login(creds, interceptAuth: false)
+        promise.then(
           (user) ->
             $scope.authError = false
             $state.go("next")
