@@ -12,6 +12,10 @@
 .tasks {
   list-style-type: none;
 
+  > li {
+    display: block;
+  }
+
   .task-done {
     display: inline-block;
     float: left;
