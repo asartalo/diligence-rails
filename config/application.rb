@@ -42,7 +42,8 @@ module Diligence
         'vendor/assets/components/bourbon/app/assets/stylesheets',
         'vendor/assets/components/mdi/scss',
         'vendor/assets/components/mdi/fonts',
-        'vendor/assets/components'
+        'vendor/assets/components',
+        'spec/javascripts/helpers',
       ].each { |p| paths << root_path(p) }
     end
 

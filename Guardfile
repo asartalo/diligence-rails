@@ -77,3 +77,10 @@ guard :rspec, cmd: "bundle exec rspec" do
     Dir[File.join("**/#{m[1]}.feature")][0] || "spec/acceptance"
   end
 end
+
+guard 'jasmine-rails', all_on_start: false do
+  watch(%r{spec/javascripts/helpers/.+\.(js|coffee)})
+  watch(%r{spec/javascripts/.+_spec\.(js\.coffee|js|coffee)$})
+  watch(%r{app/assets/javascripts/(.+?)\.(js\.coffee|js|coffee)(?:\.\w+)*$}) { |m| "spec/javascripts/#{ m[1] }_spec.#{ m[2] }" }
+  watch(%r{app/assets/components/(.+?)\.(js\.coffee|js|coffee)(?:\.\w+)*$}) { |m| "spec/javascripts/components/#{ m[1] }_spec.#{ m[2] }" }
+end

@@ -31,14 +31,16 @@ gem 'active_model_serializers', '>= 0.10.0.rc2'
 group :development do
   gem 'listen', '~> 2.7'
   gem 'annotate', '~> 2.6.6'
+  gem "rack-livereload"
   gem 'guard'
   gem 'guard-livereload'
-  gem "rack-livereload"
   gem 'guard-rspec', require: false
+  gem 'guard-jasmine-rails'
 end
 
 group :test do
   gem 'shoulda', require: false
+  gem 'phantomjs', '1.9.7.1'
 end
 
 group :development, :test do
@@ -50,7 +52,7 @@ group :development, :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'selenium-webdriver'
-  gem 'jasmine'
+  gem 'jasmine-rails'
   gem 'pry'
 end
 
