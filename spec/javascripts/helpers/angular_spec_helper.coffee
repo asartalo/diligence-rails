@@ -1,6 +1,6 @@
 #= require application
-#= require auth_mock
 #= require angular-mocks/angular-mocks
+#= require auth_mock
 #= require sinonjs/sinon
 #= require sinon-stub-promise
 #= require jasmine-sinon/lib/jasmine-sinon

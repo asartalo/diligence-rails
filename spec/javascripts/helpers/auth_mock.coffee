@@ -6,3 +6,6 @@ angular.module 'diligence'
       #
     isAuthenticated: ->
       false
+
+    login: ->
+      { then: -> }

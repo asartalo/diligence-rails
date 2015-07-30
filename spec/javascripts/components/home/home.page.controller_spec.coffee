@@ -1,33 +1,22 @@
 #= require angular_spec_helper
 
 describe 'HomePageCtrl', ->
-  controller = null
-  auth =
-    currentUser: ->
-    isAuthenticated: ->
-    login: ->
-      { then: -> }
-  state =
-    go: ->
-  currentUser = null
-
-  $controller = null
-  $scope = null
+  auth = null
+  state = null
 
   beforeEach ->
-    $controller = @controller
-    $scope = @scope
-
-  initController = (opts = {}) =>
-    $controller('HomePageCtrl',
-      $scope: $scope
-      Auth: opts.auth || auth
-      $state: opts.state || state
-      currentUser: opts.currentUser || currentUser
-    )
+    auth = @injector.get('Auth')
+    state = @injector.get('$state')
+    @initController = =>
+      @controller('HomePageCtrl',
+        $scope: @scope
+        Auth: auth
+        $state: state
+        currentUser: {}
+      )
 
   it "shows no error message", ->
-    initController()
+    @initController()
     expect(@scope.authError).not.toBeTruthy()
 
   describe "when logged in", ->
@@ -36,7 +25,7 @@ describe 'HomePageCtrl', ->
 
     it "redirects to 'next' page", ->
       @sandbox.spy(state, 'go')
-      controller = initController()
+      @initController()
       expect(state.go).toHaveBeenCalledWith('next')
 
   describe "when not logged in", ->
@@ -45,7 +34,7 @@ describe 'HomePageCtrl', ->
 
     it "does not redirect to 'next' page", ->
       @sandbox.spy(state, 'go')
-      controller = initController()
+      @initController()
       expect(state.go).not.toHaveBeenCalledWith('next')
 
   describe "when user tries to login", ->
@@ -56,7 +45,7 @@ describe 'HomePageCtrl', ->
       beforeEach ->
         form = $valid: true
         creds = email: "foo@somewhere.com", password: "secret"
-        controller = initController()
+        @initController()
 
       it "sends credentials to Auth", ->
         @sandbox.spy(auth, 'login')
