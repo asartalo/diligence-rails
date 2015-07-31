@@ -26,7 +26,7 @@ class TasksController < BaseApiController
   end
 
   def destroy
-    if task.destroy?
+    if task.destroy
       no_content
     else
       bad_request

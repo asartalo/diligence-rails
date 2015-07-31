@@ -5,9 +5,11 @@ describe 'TasksPageCtrl', ->
   task = null
   currentUser = {}
   tasks = [
+      id: 1
       name: "Task 1"
       done: false
     ,
+      id: 2
       name: "Task 2"
       done: true
   ]
@@ -15,7 +17,7 @@ describe 'TasksPageCtrl', ->
   beforeEach ->
     Tasks = @injector.get('Tasks')
     task = name: "Foo task", done: false
-    @sandbox.stub(Tasks, 'query').returns(tasks)
+    @sandbox.stub(Tasks, 'query').returns(tasks.slice())
 
     @initController = =>
       @controller('TasksPageCtrl',
@@ -60,13 +62,25 @@ describe 'TasksPageCtrl', ->
       expect(@scope.tasks[0]).toEqual(task)
 
   describe "updateTask", ->
-    promise = null
-
     beforeEach ->
       @initController()
-      promise = @fakeResourceResponse(Tasks, 'update')
+      @fakeResourceResponse(Tasks, 'update')
 
     it "saves changes to task", ->
       @scope.updateTask(task)
       expect(Tasks.update).toHaveBeenCalledWith(task)
+
+  describe "deleteTask", ->
+    promise = null
+    beforeEach ->
+      @initController()
+      promise = @fakeResourceResponse(Tasks, 'delete')
+      @scope.deleteTask(tasks[0])
+
+    it "deletes task", ->
+      expect(Tasks.delete).toHaveBeenCalledWith(tasks[0])
+
+    it "also removes tasks from tasks list", ->
+      promise.resolve(tasks[0])
+      expect(@scope.tasks).not.toContain(tasks[0])
 

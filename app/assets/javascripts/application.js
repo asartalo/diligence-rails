@@ -18,6 +18,7 @@
 //= require angular-resource/angular-resource
 //= require angular-ui-router/release/angular-ui-router
 //= require angular-devise/lib/devise
+//= require lodash/lodash
 //= require lumx/dist/lumx
 //= require diligence
 //= require_tree ../components

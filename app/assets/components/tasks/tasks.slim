@@ -16,4 +16,6 @@
           label.task-name.checkbox__label(for="checkbox-{{task.id}}")
         .task-name
           text-editable(ng-model="task.name" on-finish="updateTask(task)" ng-if="task.name")
+        a.delete-task(ng-click="deleteTask(task)")
+          i.icon.icon--m.icon--red.icon--circled.mdi.mdi-delete
 

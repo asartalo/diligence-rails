@@ -1,3 +1,5 @@
+'use strict'
+
 angular.module('diligence').controller "TasksPageCtrl",
   ($scope, currentUser, Tasks) ->
     $scope.newTask = {name: ""}
@@ -17,5 +19,9 @@ angular.module('diligence').controller "TasksPageCtrl",
 
     $scope.updateTask = (task) ->
       Tasks.update(task)
+
+    $scope.deleteTask = (task) ->
+      Tasks.delete(task).$promise.then ->
+        _.remove($scope.tasks, id: task.id)
 
 

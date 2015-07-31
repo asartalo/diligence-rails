@@ -16,6 +16,26 @@
     display: block;
   }
 
+  > .task {
+    position: relative;
+
+    .delete-task {
+      display: none;
+      position: absolute;
+      right: 10px;
+      top: 0;
+      z-index: 1;
+    }
+
+    &:hover {
+      background-color: $cyan-50;
+
+      .delete-task {
+        display: block;
+      }
+    }
+  }
+
   .task-done {
     display: inline-block;
     float: left;
