@@ -15,14 +15,6 @@ angular.module('diligence').controller "TasksPageCtrl",
             $scope.newTaskReset()
         )
 
-    $scope.toggleStatus = (task) ->
-      Tasks.update(task).$promise.then(
-        ->
-          # Do nothing
-        ->
-          task.done = !task.done
-      )
-
     $scope.updateTask = (task) ->
       Tasks.update(task)
 

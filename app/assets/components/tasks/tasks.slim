@@ -11,7 +11,7 @@
         .task-done.checkbox--standalone
           input.checkbox__input(
             type="checkbox" ng-model="task.done" id="checkbox-{{task.id}}"
-            ng-change="toggleStatus(task)"
+            ng-change="updateTask(task)"
           ) /
           label.task-name.checkbox__label(for="checkbox-{{task.id}}")
         .task-name
