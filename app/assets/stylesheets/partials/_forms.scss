@@ -7,3 +7,11 @@
   @include font-size(16px);
   text-align: center;
 }
+
+.checkbox__input {
+  & + .checkbox__label {
+    &:before {
+      color: $grey;
+    }
+  }
+}
