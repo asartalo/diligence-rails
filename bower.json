@@ -21,7 +21,8 @@
     "angular-ui-router": "~0.2.15",
     "neat": "~1.7.2",
     "lodash": "~3.10.0",
-    "angular-resource": "~1.4.3"
+    "angular-resource": "~1.4.3",
+    "velocity": "~1.2.2"
   },
   "devDependencies": {
     "jasmine-sinon": "~0.4.0"
