@@ -13,11 +13,14 @@
 //= require jquery
 // require jquery_ujs
 //= require velocity/velocity
+//= require velocity/velocity.ui
 //= require moment/min/moment-with-locales
 //= require angular/angular
+//= require angular-animate/angular-animate
 //= require angular-resource/angular-resource
 //= require angular-ui-router/release/angular-ui-router
 //= require angular-devise/lib/devise
+//= require angular-velocity/angular-velocity
 //= require lodash/lodash
 //= require lumx/dist/lumx
 //= require diligence

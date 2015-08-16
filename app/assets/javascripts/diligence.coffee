@@ -1,9 +1,11 @@
 angular.module 'diligence', [
   'ngResource'
+  'ngAnimate'
   'ui.router'
   'templates'
   'lumx'
   'Devise'
+  'angular-velocity'
 ]
   .provider 'mustLogin', ( mustLogin = ->
     # This here is what we really want

@@ -17,12 +17,14 @@
   "dependencies": {
     "lumx": "~0.3.73",
     "angular-devise": "https://github.com/asartalo/angular_devise.git#75422fd090aba558f10e6714c1776c4e15ddcaa7",
+    "angular-animate": "1.4.3",
     "angular-route": "~1.4.2",
     "angular-ui-router": "~0.2.15",
     "neat": "~1.7.2",
     "lodash": "~3.10.0",
     "angular-resource": "~1.4.3",
-    "velocity": "~1.2.2"
+    "velocity": "~1.2.2",
+    "angular-velocity": "~0.3.2"
   },
   "devDependencies": {
     "jasmine-sinon": "~0.4.0"

@@ -2,12 +2,12 @@
   .page-content
     h1 Tasks
 
+    .task
+      form(name="form" ng-submit="createTask(form, newTask)")
+        lx-text-field()
+          textarea(ng-model="newTask.name" required on-enter="createTask(form, newTask)")
     ul.tasks.next-tasks(ng-if="tasks.length")
-      li.task
-        form(name="form" ng-submit="createTask(form, newTask)")
-          lx-text-field()
-            textarea(ng-model="newTask.name" required on-enter="createTask(form, newTask)")
-      li.task(ng-repeat="task in tasks track by task.id")
+      li.task.velocity-enter-transition-slideUpIn(ng-repeat="task in tasks track by task.id")
         .task-done.checkbox--standalone
           input.checkbox__input(
             type="checkbox" ng-model="task.done" id="checkbox-{{task.id}}"
