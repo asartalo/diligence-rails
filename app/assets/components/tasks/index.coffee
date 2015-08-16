@@ -1,6 +1,6 @@
 angular.module 'diligence'
   .config ($stateProvider, mustLoginProvider) ->
-    hasUser = mustLoginProvider.hasUser
+    mustLogin = mustLoginProvider.mustLogin
     $stateProvider
       .state "tasks", mustLogin
         url: "/tasks"

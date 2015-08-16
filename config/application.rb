@@ -52,5 +52,6 @@ module Diligence
       g.helper_specs false
       g.controller_specs false
     end
+
   end
 end
