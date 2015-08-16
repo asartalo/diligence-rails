@@ -17,7 +17,7 @@
   "dependencies": {
     "lumx": "~0.3.73",
     "angular-devise": "https://github.com/asartalo/angular_devise.git#75422fd090aba558f10e6714c1776c4e15ddcaa7",
-    "angular-animate": "1.4.3",
+    "angular-animate": "1.4.4",
     "angular-route": "~1.4.2",
     "angular-ui-router": "~0.2.15",
     "neat": "~1.7.2",
@@ -28,5 +28,9 @@
   },
   "devDependencies": {
     "jasmine-sinon": "~0.4.0"
+  },
+  "resolutions": {
+    "angular-animate": "1.4.4",
+    "angular": "1.4.4"
   }
 }
