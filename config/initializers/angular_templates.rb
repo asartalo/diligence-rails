@@ -10,3 +10,7 @@ if Rails.env.development? and ENV['server_mode']
   end
   listener.start
 end
+
+# Load custom helpers for precompile
+Sprockets::Context.send :include, Standalone::DiligenceTextHelper
+
