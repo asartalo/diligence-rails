@@ -2,7 +2,7 @@ class Task < ActiveRecord::Base
   belongs_to :user
   validates_presence_of :name
 
-  default_scope { order(created_at: :desc) }
+  default_scope { order(created_at: :asc) }
 
   def done?
     !!done_at

@@ -6,8 +6,11 @@
       form(name="form" ng-submit="createTask(form, newTask)")
         lx-text-field()
           textarea(ng-model="newTask.name" required on-enter="createTask(form, newTask)")
-    ul.tasks.next-tasks(ng-if="tasks.length")
-      li.task.velocity-enter-transition-slideUpIn(ng-repeat="task in tasks track by task.id")
+    ul.tasks.next-tasks(ng-if="tasks && tasks.length")
+      li.task.velocity-enter-transition-slideDownIn(
+        ng-repeat="task in tasks track by task.id"
+        ng-class="{done: task.done}"
+      )
         .task-done.checkbox--standalone
           input.checkbox__input(
             type="checkbox" ng-model="task.done" id="checkbox-{{task.id}}"
