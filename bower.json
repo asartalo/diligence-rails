@@ -17,6 +17,7 @@
   "dependencies": {
     "lumx": "~0.3.73",
     "angular-devise": "https://github.com/asartalo/angular_devise.git#75422fd090aba558f10e6714c1776c4e15ddcaa7",
+    "mdi": "https://github.com/asartalo/MaterialDesign-Webfont.git#02b33447d3e126f93dd368ef88ef6e5cef9fba2b",
     "angular-animate": "1.4.4",
     "angular-route": "~1.4.2",
     "angular-ui-router": "~0.2.15",
@@ -31,6 +32,7 @@
   },
   "resolutions": {
     "angular-animate": "1.4.4",
-    "angular": "1.4.4"
+    "angular": "1.4.4",
+    "mdi": "02b33447d3e126f93dd368ef88ef6e5cef9fba2b"
   }
 }
