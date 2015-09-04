@@ -60,6 +60,9 @@ GEM
       timers (~> 4.0.0)
     childprocess (0.5.6)
       ffi (~> 1.0, >= 1.0.11)
+    closure_tree (5.2.0)
+      activerecord (>= 3.2.0)
+      with_advisory_lock (>= 3.0.0)
     coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
@@ -297,6 +300,9 @@ GEM
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
     websocket (1.2.2)
+    with_advisory_lock (3.0.0)
+      activerecord (>= 3.2)
+      thread_safe
     xpath (2.0.0)
       nokogiri (~> 1.3)
 
@@ -309,6 +315,7 @@ DEPENDENCIES
   annotate (~> 2.6.6)
   byebug
   capybara
+  closure_tree
   coffee-rails (~> 4.1.0)
   database_cleaner
   devise

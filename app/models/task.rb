@@ -1,4 +1,5 @@
 class Task < ActiveRecord::Base
+  has_closure_tree order: 'sort_order'
   belongs_to :user
   validates_presence_of :name
 
