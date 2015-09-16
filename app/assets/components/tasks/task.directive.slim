@@ -1,0 +1,12 @@
+li.task.velocity-enter-transition-slideDownIn(ng-class="{done: task.done}")
+  .task-done.checkbox--standalone
+    input.checkbox__input(
+      type="checkbox" ng-model="task.done" id="checkbox-{{task.id}}"
+      ng-change="finish()"
+    ) /
+    label.task-name.checkbox__label(for="checkbox-{{task.id}}")
+  .task-name
+    text-editable(ng-model="task.name" on-finish="finish()" ng-if="task.name")
+  a.delete-task(ng-click="remove()")
+    i.icon.icon--m.icon--red.icon--circled.mdi.mdi-delete
+

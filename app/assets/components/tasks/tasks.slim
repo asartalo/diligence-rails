@@ -7,18 +7,8 @@
         lx-text-field()
           textarea(ng-model="newTask.name" required on-enter="createTask(form, newTask)")
     ul.tasks.next-tasks(ng-if="tasks && tasks.length")
-      li.task.velocity-enter-transition-slideDownIn(
-        ng-repeat="task in tasks track by task.id"
-        ng-class="{done: task.done}"
+      li(
+        task="task" ng-repeat="task in tasks track by task.id"
+        on-update="updateTask(task)"
+        on-delete="deleteTask(task)"
       )
-        .task-done.checkbox--standalone
-          input.checkbox__input(
-            type="checkbox" ng-model="task.done" id="checkbox-{{task.id}}"
-            ng-change="updateTask(task)"
-          ) /
-          label.task-name.checkbox__label(for="checkbox-{{task.id}}")
-        .task-name
-          text-editable(ng-model="task.name" on-finish="updateTask(task)" ng-if="task.name")
-        a.delete-task(ng-click="deleteTask(task)")
-          i.icon.icon--m.icon--red.icon--circled.mdi.mdi-delete
-
