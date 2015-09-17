@@ -5,8 +5,10 @@ li.task.velocity-enter-transition-slideDownIn(ng-class="{done: task.done}")
       ng-change="finish()"
     ) /
     label.task-name.checkbox__label(for="checkbox-{{task.id}}")
-  .task-name
+  .task-name(ng-click="editMode()")
     text-editable(ng-model="task.name" on-finish="finish()" ng-if="task.name")
-  a.delete-task(ng-click="remove()")
-    i.icon.icon--m.icon--red.icon--circled.mdi.mdi-delete
+  .task-actions(ng-class="{'edit-mode': editing }")
+    a.delete-task.btn.btn--flat.btn--xs.btn--red(ng-click="remove()")
+      i.icon.icon--m.mdi.mdi-delete>
+      = "Delete"
 

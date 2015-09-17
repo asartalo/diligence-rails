@@ -18,8 +18,7 @@
 
   > .task {
     position: relative;
-    padding-top: rem(8px);
-    transition: 0.3s all;
+    transition: 0.3s max-height, padding-top;
     overflow: hidden;
 
     &.done {
@@ -32,30 +31,29 @@
     }
 
     .delete-task {
-      display: none;
-      position: absolute;
-      right: 10px;
-      top: 0;
-      z-index: 1;
+
+      .icon {
+        vertical-align: baseline;
+      }
+
     }
 
     &:hover {
-      // background-color: $cyan-50;
-
       .delete-task {
-        display: block;
       }
     }
   }
 
   .task-done {
+    padding-top: rem(8px);
     display: inline-block;
     float: left;
     position: relative;
   }
 
   .task-name {
-    padding-left: 30px;
+    padding-top: rem(8px);
+    padding-left: rem(30px);
 
     .text-field {
       padding-top: 0;
@@ -64,6 +62,19 @@
         padding: 0;
         margin: 0;
       }
+    }
+  }
+
+  .task-actions {
+    padding-left: rem(30px);
+    width: 100%;
+    overflow: hidden;
+    height: 0;
+    transition: 0.3s height;
+
+    &.edit-mode {
+      opacity: 1;
+      height: 32px;
     }
   }
 }

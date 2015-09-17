@@ -5,6 +5,8 @@ angular.module('diligence').directive "task", ($timeout) ->
   templateUrl: 'tasks/task.directive.html'
   replace: true
   link: (scope, el, attrs) ->
+    scope.editing = false
+
     scope.remove = ->
       theEl = $(el)
       theEl.css(maxHeight: theEl.height())
@@ -12,6 +14,14 @@ angular.module('diligence').directive "task", ($timeout) ->
 
     scope.finish = ->
       scope.onUpdate()
+      $timeout(
+        ->
+          scope.editing = false
+        300
+      )
+
+    scope.editMode = ->
+      scope.editing = true
 
   scope:
     task: '='
