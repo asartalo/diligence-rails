@@ -1,6 +1,6 @@
 class TasksController < BaseApiController
 
-  before_filter :find_task, only: [:show, :update, :destroy]
+  before_filter :find_task, only: [:show, :update, :destroy, :append]
   before_filter :set_task_params, only: [:create, :update]
   # skip_before_action :verify_authenticity_token
 
@@ -31,6 +31,12 @@ class TasksController < BaseApiController
     else
       bad_request
     end
+  end
+
+  def append
+    new_task = user.tasks.create(name: "New Task")
+    task.append_sibling(new_task)
+    render json: user.tasks
   end
 
   private

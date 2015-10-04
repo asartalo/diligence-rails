@@ -25,6 +25,7 @@ Rails.application.routes.draw do
           get '/' => 'tasks#show'
           put '/' => 'tasks#update'
           delete '/' => 'tasks#destroy'
+          post '/append' => 'tasks#append'
         end
       end
 

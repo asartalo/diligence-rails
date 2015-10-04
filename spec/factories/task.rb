@@ -3,5 +3,9 @@ FactoryGirl.define do
     name "Rake in the millions"
     user
   end
+
+  factory :root_task do
+    name "Granparent"
+  end
 end
 

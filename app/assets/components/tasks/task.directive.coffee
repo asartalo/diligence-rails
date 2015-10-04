@@ -7,6 +7,9 @@ angular.module('diligence').directive "task", ($timeout) ->
   link: (scope, el, attrs) ->
     scope.editing = false
 
+    scope.insertTask = ->
+      scope.onInsert()
+
     scope.remove = ->
       theEl = $(el)
       theEl.css(maxHeight: theEl.height())
@@ -27,3 +30,5 @@ angular.module('diligence').directive "task", ($timeout) ->
     task: '='
     onUpdate: '&'
     onDelete: '&'
+    onInsert: '&'
+

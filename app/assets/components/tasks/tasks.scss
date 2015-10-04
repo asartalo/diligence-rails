@@ -10,6 +10,7 @@
 
 
 .tasks {
+  padding-top: rem(32px);
   list-style-type: none;
 
   > li {
@@ -22,7 +23,9 @@
     overflow: hidden;
 
     &.done {
-      opacity: 0.6;
+      .task-name {
+        opacity: 0.6;
+      }
     }
 
     &.ng-leave-active {
@@ -30,7 +33,7 @@
       padding-top: 0;
     }
 
-    .delete-task {
+    .btn {
 
       .icon {
         vertical-align: baseline;
@@ -41,6 +44,13 @@
     &:hover {
       .delete-task {
       }
+    }
+  }
+
+  .task-new {
+    padding-left: rem(30px);
+    .text-field {
+      padding-top: 0;
     }
   }
 

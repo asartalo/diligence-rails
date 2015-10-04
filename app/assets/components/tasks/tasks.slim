@@ -2,13 +2,14 @@
   .page-content
     h1 Tasks
 
-    .task
-      form(name="form" ng-submit="createTask(form, newTask)")
-        lx-text-field()
-          textarea(ng-model="newTask.name" required on-enter="createTask(form, newTask)")
-    ul.tasks.next-tasks(ng-if="tasks && tasks.length")
+    ul.tasks.next-tasks()
       li(
-        task="task" ng-repeat="task in tasks track by task.id"
+        task="task" ng-repeat="task in tasks track by task.id | orderBy:'sort_order'"
         on-update="updateTask(task)"
+        on-insert="appendTaskAfter(task)"
         on-delete="deleteTask(task)"
       )
+      li.task.task-new
+        form(name="form" ng-submit="createTask(form, newTask)")
+          lx-text-field()
+            textarea(ng-model="newTask.name" required on-enter="createTask(form, newTask)")
