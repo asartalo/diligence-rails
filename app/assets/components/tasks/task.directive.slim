@@ -14,4 +14,7 @@ li.task.velocity-enter-transition-slideDownIn(ng-class="{done: task.done}" id="t
     a.delete-task.btn.btn--flat.btn--xs.btn--red(ng-click="remove()")
       i.icon.icon--m.mdi.mdi-delete>
       = "Delete"
+    a.insert-task.btn.btn--flat.btn--xs(ng-click="archive()")
+      i.icon.icon--m.mdi.mdi-archive>
+      = "Archive"
 

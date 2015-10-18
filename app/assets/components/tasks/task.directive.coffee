@@ -15,6 +15,11 @@ angular.module('diligence').directive "task", ($timeout) ->
       theEl.css(maxHeight: theEl.height())
       scope.onDelete()
 
+    scope.archive = ->
+      theEl = $(el)
+      theEl.css(maxHeight: theEl.height())
+      scope.onArchive()
+
     scope.finish = ->
       scope.onUpdate()
       $timeout(
@@ -31,4 +36,5 @@ angular.module('diligence').directive "task", ($timeout) ->
     onUpdate: '&'
     onDelete: '&'
     onInsert: '&'
+    onArchive: '&'
 

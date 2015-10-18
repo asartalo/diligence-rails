@@ -10,6 +10,7 @@
 #  user_id    :integer
 #  parent_id  :integer
 #  sort_order :integer
+#  archived   :boolean          default(FALSE), not null
 #
 
 require 'rails_helper'

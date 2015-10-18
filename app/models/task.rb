@@ -10,6 +10,7 @@
 #  user_id    :integer
 #  parent_id  :integer
 #  sort_order :integer
+#  archived   :boolean          default(FALSE), not null
 #
 
 class Task < ActiveRecord::Base
@@ -17,7 +18,7 @@ class Task < ActiveRecord::Base
   belongs_to :user
   validates_presence_of :name
 
-  default_scope { order(sort_order: :asc) }
+  default_scope { where(archived: false).order(sort_order: :asc) }
 
   def done?
     !!done_at

@@ -10,8 +10,9 @@
 #  user_id    :integer
 #  parent_id  :integer
 #  sort_order :integer
+#  archived   :boolean          default(FALSE), not null
 #
 
 class TaskSerializer < ActiveModel::Serializer
-  attributes :id, :name, :done_at, :done, :created_at, :sort_order
+  attributes :id, :name, :done_at, :done, :created_at, :sort_order, :archived
 end

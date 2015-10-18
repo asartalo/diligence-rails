@@ -32,4 +32,9 @@ angular.module('diligence').controller "TasksPageCtrl",
       Tasks.delete(task).$promise.then ->
         _.remove($scope.tasks, id: task.id)
 
+    $scope.archiveTask = (task) ->
+      task.archived = true
+      Tasks.update(task).$promise.then ->
+        _.remove($scope.tasks, id: task.id)
+
 

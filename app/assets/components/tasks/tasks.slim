@@ -8,6 +8,7 @@
         on-update="updateTask(task)"
         on-insert="appendTaskAfter(task)"
         on-delete="deleteTask(task)"
+        on-archive="archiveTask(task)"
       )
       li.task.task-new
         form(name="form" ng-submit="createTask(form, newTask)")
